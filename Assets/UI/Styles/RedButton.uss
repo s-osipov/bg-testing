@@ -1,0 +1,13 @@
+.red-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-red);
+    border-width: 0;
+    padding: 0;
+}
+
+.red-button.round {
+    border-radius: 50%;
+    opacity: 0.8;
+}

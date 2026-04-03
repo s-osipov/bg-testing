@@ -1,0 +1,68 @@
+.scroll-field {
+    max-height: 153px;
+    width: 321px;
+    border-width: 3px;
+    border-color: #39373A;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    padding: 4px 6px 4px 0;
+}
+
+.content-label {
+    white-space: normal; 
+    padding: 1px 13px;
+}
+
+.unity-base-text-field__input {
+    -unity-font-definition: resource("Fonts/AnekDevanagari");
+    font-size: 10px;
+    background-color: #FFFFFF;
+    border-width: 0;
+    padding: 2px 0;
+    white-space: normal;
+}
+
+.unity-scroller--vertical {
+    width: 19px;
+    background-color: #d7d7d8;
+    border-left-width: 0;
+    border-radius: 10px;
+}
+
+.unity-scroller--vertical .unity-base-slider__tracker {
+    background-color: transparent;
+    border-width: 0;  
+    border-radius: 10px;   
+    width: 19px;
+}
+
+.unity-scroller--vertical .unity-base-slider__dragger {
+    background-color: #9c9b9d;
+    border-radius: 5px;      
+    width: 15px;
+    min-height: 45px;
+    left: 2px;             
+}
+
+/* Кнопки вверх и вниз */
+.unity-scroller__low-button, 
+.unity-scroller__high-button {
+    background-color: var(--color-red);
+    border-radius: 50%;    
+    border-width: 0;
+    margin: 2px;
+    width: 15px;
+    height: 15px;
+    -unity-background-image-tint-color: var(--color-background);
+    background-image: resource("Icons/left-arrow");
+    background-size: 5px 7px;
+    background-position: 4px 4px;
+}
+
+.unity-scroller__low-button {
+    rotate: 90deg;
+}
+
+.unity-scroller__high-button {
+    rotate: 270deg;
+}

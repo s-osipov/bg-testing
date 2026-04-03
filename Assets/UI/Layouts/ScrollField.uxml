@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://w3.org" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElementsSchema.xsd" editor-extension-mode="False">
+    <ui:ScrollView name="main-scroll" class="scroll-field">
+        <ui:TextField 
+            name="content-field"
+            class="content-label"
+            multiline="true"
+        />
+    </ui:ScrollView>
+</ui:UXML>
