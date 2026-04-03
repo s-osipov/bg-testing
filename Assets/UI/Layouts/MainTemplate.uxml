@@ -17,20 +17,18 @@
                 <ui:VisualElement name="controlsContent" class="content" >
                     <ui:Label text="я диспетчер" name="subtitle" class="subtitle" />
                     <!-- first -->
-                    <ui:VisualElement name="navigationEl" class="controls" style="display: none;">
+                    <ui:VisualElement name="navigationEl" class="controls" >
                         <custom:RedButton name="leftBtn" round="true" class="action left"/>
                         <custom:RedButton name="chooseBtn" label="выбрать" class="mainBtn"/>
                         <custom:RedButton name="rightBtn" round="true" class="action right"/>
                     </ui:VisualElement>
                     <!-- second -->
-                    <ui:VisualElement name="closeEl" class="close-controls" >
+                    <ui:VisualElement name="closeEl" class="close-controls" style="display: none;">
                         <custom:RedButton name="closeEmptyBtn" round="true" class="action close"/>
                     </ui:VisualElement>
                     <!-- third -->
                     <ui:VisualElement name="textEl" class="text-controls" style="display: none;">
-                        <ui:VisualElement style="flex-grow: 1">
-                            <custom:ScrollField name="textField" />
-                        </ui:VisualElement>
+                        <custom:ScrollField name="textField" />
                         <ui:VisualElement class="close-controls">
                             <custom:RedButton name="closeTextBtn" round="true" class="action close" />
                         </ui:VisualElement>

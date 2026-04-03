@@ -1,11 +1,15 @@
 .scroll-field {
     max-height: 153px;
+    height: 100%;
     width: 321px;
     border-width: 3px;
     border-color: #39373A;
     border-radius: 10px;
     background-color: #FFFFFF;
     padding: 4px 6px 4px 0;
+    flex-shrink: 1;
+    flex-grow: 0;
+    min-height: 0;
 }
 
 .content-label {
@@ -44,7 +48,6 @@
     left: 2px;             
 }
 
-/* Кнопки вверх и вниз */
 .unity-scroller__low-button, 
 .unity-scroller__high-button {
     background-color: var(--color-red);
