@@ -57,7 +57,7 @@ namespace Components
 
         public RedButton()
         {
-            var styleSheet = AssetDatabase.LoadAssetAtPath<StyleSheet>("Assets/UI/Styles/RedButton.uss");
+            var styleSheet = Resources.Load<StyleSheet>("UI/Styles/RedButton");
             if (styleSheet != null)
                 styleSheets.Add(styleSheet);
 

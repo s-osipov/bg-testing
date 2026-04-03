@@ -19,11 +19,11 @@ namespace Components
 
         public ScrollField()
         {
-            var styleSheet = AssetDatabase.LoadAssetAtPath<StyleSheet>("Assets/UI/Styles/ScrollField.uss");
+            var styleSheet = Resources.Load<StyleSheet>("UI/Styles/ScrollField");
             if (styleSheet != null)
                 styleSheets.Add(styleSheet);
 
-            var asset = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/UI/Layouts/ScrollField.uxml");
+            var asset = Resources.Load<VisualTreeAsset>("UI/Layouts/ScrollField");
             if (asset != null)
             {
                 asset.CloneTree(this);

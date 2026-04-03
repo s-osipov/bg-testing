@@ -43,7 +43,7 @@ namespace Components
         {
             if (styleSheet == null)
             {
-                styleSheet = AssetDatabase.LoadAssetAtPath<StyleSheet>("Assets/UI/Styles/Rating.uss");
+                styleSheet = Resources.Load<StyleSheet>("UI/Styles/Rating");
             }
 
             if (styleSheet != null && !styleSheets.Contains(styleSheet))
