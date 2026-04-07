@@ -1,14 +1,17 @@
 .scroll-field {
+    width: 100%;
+    max-width: 321px;
+    min-width: 0;
+    height: auto;
     max-height: 153px;
-    height: 100%;
-    width: 321px;
+    align-self: stretch;
     border-width: 3px;
     border-color: #39373A;
     border-radius: 10px;
     background-color: #FFFFFF;
     padding: 4px 6px 4px 0;
     flex-shrink: 1;
-    flex-grow: 0;
+    flex-grow: 1;
     min-height: 0;
 }
 
@@ -68,4 +71,29 @@
 
 .unity-scroller__high-button {
     rotate: 270deg;
+}
+
+.is-mobile .scroll-field {
+    width: 100%;
+    max-width: none;
+    height: 140px;
+    /* max-height: 220px; */
+    border-width: 2px;
+}
+
+.is-mobile .unity-base-text-field__input {
+    font-size: 12px;
+}
+
+.is-mobile .unity-scroller--vertical {
+    width: 22px;
+}
+
+.is-mobile .unity-scroller--vertical .unity-base-slider__tracker {
+    width: 22px;
+}
+
+.is-mobile .unity-scroller--vertical .unity-base-slider__dragger {
+    width: 16px;
+    left: 3px;
 }

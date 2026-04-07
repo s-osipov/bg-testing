@@ -1,41 +1,13 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xmlns:custom="Components" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+
     <Style src="project://database/Assets/UI/Styles/main.uss?fileID=7433441132597879392&amp;guid=9d9682ac039ccee4e88a82c868f6e64d&amp;type=3#main"/>
+    <Style src="project://database/Assets/Resources/UI/Styles/Popup.uss?fileID=7433441132597879392&amp;guid=8cd804a50e2f4607b3c2813558bb3111&amp;type=3#Popup"/>
+
     <ui:VisualElement class="root">
-        <ui:VisualElement class="popup">
-            <ui:VisualElement class="header-circle-outline"/>
-            <ui:VisualElement class="card-body-inner">
-                <ui:VisualElement class="header-circle-inner">
-                    <ui:Image name="icon" class="icon"/>
-                </ui:VisualElement>
 
-                <ui:VisualElement style="flex-grow: 0">
-                    <ui:VisualElement name="ratingEl" class="rating-container">
-                        <custom:Rating name="rating" max-stars="3"/>
-                    </ui:VisualElement>
-                    <ui:Label text="ДОБРЫЙ ВЕЧЕР" name="title" class="title"/>
-                </ui:VisualElement>
-                <ui:VisualElement name="controlsContent" class="content" >
-                    <ui:Label text="я диспетчер" name="subtitle" class="subtitle" />
-                    <!-- first -->
-                    <ui:VisualElement name="navigationEl" class="controls" >
-                        <custom:RedButton name="leftBtn" round="true" class="action left"/>
-                        <custom:RedButton name="chooseBtn" label="выбрать" class="mainBtn"/>
-                        <custom:RedButton name="rightBtn" round="true" class="action right"/>
-                    </ui:VisualElement>
-                    <!-- second -->
-                    <ui:VisualElement name="closeEl" class="close-controls" style="display: none;">
-                        <custom:RedButton name="closeEmptyBtn" round="true" class="action close"/>
-                    </ui:VisualElement>
-                    <!-- third -->
-                    <ui:VisualElement name="textEl" class="text-controls" style="display: none;">
-                        <custom:ScrollField name="textField" />
-                        <ui:VisualElement class="close-controls">
-                            <custom:RedButton name="closeTextBtn" round="true" class="action close" />
-                        </ui:VisualElement>
-                    </ui:VisualElement>
+        <custom:Popup name="popup" />
 
-                </ui:VisualElement>
-            </ui:VisualElement>
-        </ui:VisualElement>
     </ui:VisualElement>
+
 </ui:UXML>
+

@@ -1,4 +1,3 @@
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -10,6 +9,7 @@ namespace Components
         private VisualElement[] stars;
         private int currentRating = 0;
         private int maxStars = 3;
+        private bool isMouseLeaveRegistered;
 
         [SerializeField] private VectorImage starEmpty;
         [SerializeField] private VectorImage starActive;
@@ -20,7 +20,7 @@ namespace Components
             get => maxStars;
             set
             {
-                maxStars = value;
+                maxStars = Mathf.Max(1, value);
                 Init(maxStars);
             }
         }
@@ -53,6 +53,10 @@ namespace Components
         }
         public void Init(int count)
         {
+            count = Mathf.Max(1, count);
+            maxStars = count;
+            currentRating = Mathf.Clamp(currentRating, 0, maxStars);
+
             Clear();
 
             starEmpty = Resources.Load<VectorImage>("Icons/star-empty");
@@ -93,10 +97,14 @@ namespace Components
                 Add(star);
             }
 
-            RegisterCallback<MouseLeaveEvent>(_ =>
+            if (!isMouseLeaveRegistered)
             {
-                RestoreRating();
-            });
+                RegisterCallback<MouseLeaveEvent>(_ =>
+                {
+                    RestoreRating();
+                });
+                isMouseLeaveRegistered = true;
+            }
         }
 
 
@@ -109,6 +117,7 @@ namespace Components
 
         public void SetRating(int value, bool notify = true)
         {
+            value = Mathf.Clamp(value, 0, maxStars);
             currentRating = value;
 
             if (stars == null)
@@ -118,8 +127,6 @@ namespace Components
             {
                 SetStarImage(stars[i], i < value);
             }
-
-            OnValueChanged?.Invoke(currentRating);
 
             if (notify)
                 OnValueChanged?.Invoke(currentRating);

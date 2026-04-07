@@ -15,3 +15,9 @@
 .star--last {
     margin-right: 0px;
  }
+
+.is-mobile .star {
+    width: 28px;
+    height: 28px;
+    margin-right: 12px;
+}

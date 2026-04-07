@@ -1,4 +1,3 @@
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 using Helpers;
@@ -8,13 +7,15 @@ namespace Components
     [UxmlElement]
     public partial class ScrollField : VisualElement
     {
-        private ScrollView _scrollView;
-        private Label _label;
         private TextField contentField;
         public string Text
         {
-            get => contentField.value;
-            set => contentField.value = value;
+            get => contentField?.value ?? string.Empty;
+            set
+            {
+                if (contentField != null)
+                    contentField.value = value ?? string.Empty;
+            }
         }
 
         public ScrollField()
@@ -28,6 +29,8 @@ namespace Components
             {
                 asset.CloneTree(this);
                 contentField = this.Q<TextField>("content-field");
+                if (contentField == null)
+                    Debug.LogError("Не удалось найти 'content-field' в ScrollField.uxml");
             }
             else
             {
@@ -35,7 +38,10 @@ namespace Components
             }
 
             var data = StringData.Load();
-            Text = data.GetBigText();
+            if (data != null)
+                Text = data.GetBigText() ?? string.Empty;
+            else
+                Debug.LogError("Не удалось загрузить StringData для ScrollField");
         }
     }
 }

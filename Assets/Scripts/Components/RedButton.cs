@@ -1,4 +1,3 @@
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -7,6 +6,7 @@ namespace Components
     [UxmlElement]
     public partial class RedButton : Button
     {
+        private static StyleSheet styleSheet;
         private Image iconElement;
 
         [UxmlAttribute]
@@ -25,11 +25,18 @@ namespace Components
                 {
                     if (value is Texture2D texture)
                     {
+                        iconElement.vectorImage = null;
                         iconElement.image = texture;
                     }
                     else if (value is VectorImage vector)
                     {
+                        iconElement.image = null;
                         iconElement.vectorImage = vector;
+                    }
+                    else
+                    {
+                        iconElement.image = null;
+                        iconElement.vectorImage = null;
                     }
 
                     iconElement.style.display = value != null
@@ -57,7 +64,9 @@ namespace Components
 
         public RedButton()
         {
-            var styleSheet = Resources.Load<StyleSheet>("UI/Styles/RedButton");
+            if (styleSheet == null)
+                styleSheet = Resources.Load<StyleSheet>("UI/Styles/RedButton");
+
             if (styleSheet != null)
                 styleSheets.Add(styleSheet);
 

@@ -1,0 +1,35 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xmlns:custom="Components" xsi="http://w3.org" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement class="popup">
+        <ui:VisualElement class="header-circle-outline"/>
+        <ui:VisualElement class="card-body-inner">
+            <ui:VisualElement class="header-circle-inner">
+                <ui:Image name="icon" class="icon"/>
+            </ui:VisualElement>
+
+            <ui:VisualElement style="flex-grow: 0">
+                <ui:VisualElement name="ratingEl" class="rating-container">
+                    <custom:Rating name="rating" max-stars="3"/>
+                </ui:VisualElement>
+                <ui:Label text="ДОБРЫЙ ВЕЧЕР" name="title" class="title"/>
+            </ui:VisualElement>
+            <ui:VisualElement name="controlsContent" class="content" >
+                <ui:Label text="я диспетчер" name="subtitle" class="subtitle" />
+                <ui:VisualElement name="navigationEl" class="controls" >
+                    <custom:RedButton name="leftBtn" round="true" class="action left"/>
+                    <custom:RedButton name="chooseBtn" label="выбрать" class="mainBtn"/>
+                    <custom:RedButton name="rightBtn" round="true" class="action right"/>
+                </ui:VisualElement>
+                <ui:VisualElement name="closeEl" class="close-controls" style="display: none;">
+                    <custom:RedButton name="closeEmptyBtn" round="true" class="action close"/>
+                </ui:VisualElement>
+                <ui:VisualElement name="textEl" class="text-controls" style="display: none;">
+                    <custom:ScrollField name="textField" />
+                    <ui:VisualElement class="close-controls">
+                        <custom:RedButton name="closeTextBtn" round="true" class="action close" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
